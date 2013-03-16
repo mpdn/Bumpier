@@ -17,11 +17,13 @@ Bumpier has the following dependencies:
 * Gengetopt (for building the parameter parser)
 
 On an Ubuntu system, the process of building would be something like this (assuming premake4 is already installed):
+
 	sudo apt-get install libeigen3-dev libpng++-dev libpng12-dev gengetopt &
 	premake4 gmake &
 	make config=release
 
 To install it you can use the following commands:
+
 	sudo cp Bumpier /usr/bin/bumpier &
 	sudo chmod +x /usr/bin/bumpier
 
