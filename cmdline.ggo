@@ -1,0 +1,15 @@
+package "bumpier"
+version "0.1"
+purpose "Displacement map to normal map converter"
+description "Generates a normal map of a corresponding displacement map using a specified 3d model."
+versiontext "Copyright (C) 2013  Mike Pedersen - Released under the LGPLv3 license"
+
+option "output" o "Output normal map file" string typestr="filename" required
+option "input" i "Input displacement map file" string typestr="filename" required
+
+option "phi" p "How much the value of the displacement map changes the elevation. A larger value creates steeper normal maps." float default="1" optional
+option "object-space" s "If set, the normals will be in object-space instead of tangent-space" flag off
+
+defgroup "model" groupdesc="Determines how the displacement map is transformd into 3D." required
+groupoption "plane" P "Transforms the image as a flat plane with the displacement map applied." group="model"
+groupoption "sphere" S "Transforms the image as a sphere with the displacement map applied." group="model"

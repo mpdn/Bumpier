@@ -1,0 +1,18 @@
+#ifndef BUMPIER_SPHERE_H
+#define BUMPIER_SPHERE_H
+
+#include "model.h"
+
+namespace bumpier
+{
+	struct sphere : public model
+	{
+		Eigen::Matrix3f tangentspace(Eigen::Vector2f point) const;
+		Eigen::Vector3f position(Eigen::Vector2f point, float value) const;
+
+		private:
+		Eigen::Vector3f normal(Eigen::Vector2f point) const;
+	};
+}
+
+#endif
